@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Portal do Delivery — tema claro (off-white) */
+    --background: 40 26% 93%;        /* #F2EFE9 bege off-white */
+    --foreground: 0 0% 11%;          /* #1C1C1C grafite */
+
+    --card: 0 0% 100%;               /* branco para cards sobre o bege */
+    --card-foreground: 0 0% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 11%;
+
+    --primary: 2 82% 51%;            /* #E8211A vermelho da marca */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 11%;           /* preto/grafite como segundo destaque */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 20% 88%;             /* bege sutil para inputs/fundos */
+    --muted-foreground: 0 0% 38%;    /* cinza escuro para textos de apoio */
+
+    --accent: 2 82% 51%;             /* vermelho */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 14% 82%;
+    --input: 40 14% 82%;
+    --ring: 2 82% 51%;
+
+    --radius: 0.75rem;
+
+    /* off-white -> branco no hero */
+    --gradient-hero: linear-gradient(180deg, hsl(40 30% 95%) 0%, hsl(0 0% 100%) 100%);
+    /* vermelho da marca (seções de ênfase) */
+    --gradient-red: linear-gradient(135deg, hsl(2 82% 51%) 0%, hsl(2 75% 42%) 100%);
+    /* grafite/preto (seções de ênfase escura) */
+    --gradient-ink: linear-gradient(160deg, #1B191B 0%, #1B191B 100%);
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 11%;
+    --sidebar-primary: 2 82% 51%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 2 82% 51%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 40 14% 82%;
+    --sidebar-ring: 2 82% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-cta {
+    @apply bg-primary text-primary-foreground font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg;
+    box-shadow: 0 10px 25px -8px hsl(2 82% 51% / 0.55);
+  }
+  .btn-cta:hover {
+    @apply scale-[1.03];
+    filter: brightness(1.05);
+  }
+
+  .section-dark {
+    @apply text-white;
+    background: var(--gradient-ink);
+  }
+
+  .section-red {
+    @apply text-white;
+    background: var(--gradient-red);
+  }
+
+  .card-pillar {
+    @apply bg-card rounded-xl p-6 border border-border shadow-sm;
+  }
+
+  .highlight-red {
+    @apply text-primary;
+  }
+
+  .highlight-red-box {
+    @apply bg-accent text-accent-foreground px-2 py-1 rounded;
+  }
+}
